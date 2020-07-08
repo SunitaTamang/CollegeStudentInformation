@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-<h1>Welcome to my college page!!!</h1>
+<h1>Welcome to The College page!!!</h1>
 </header>
 
 </body>
