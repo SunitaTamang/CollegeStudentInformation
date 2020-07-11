@@ -33,7 +33,7 @@ public class ImageUtil {
 	}
 	public static  void  readImageFromDIsk(String imageUrl, HttpServletResponse response) {
 		try(BufferedInputStream in = new BufferedInputStream(new FileInputStream(imageUrl),BUFFER_SIZE);
-				BufferedOutputStream out = new BufferedOutputStream(response.getOutputStream(),BUFFER_SIZE);
+		BufferedOutputStream out = new BufferedOutputStream(response.getOutputStream(),BUFFER_SIZE);
 				) {
 			int len;
 			byte[] bytes= new byte[BUFFER_SIZE];

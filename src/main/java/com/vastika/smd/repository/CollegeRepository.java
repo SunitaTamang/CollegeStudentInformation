@@ -16,8 +16,6 @@ public interface CollegeRepository {
 	College getCollegeInfoById (int id);
 	
 	void updateCollegeInfo(College college);
-	
 
-	
-	
-}
+	College getCollegeByCollegeNameAndPassword(String collegeName, String passWord);
+	}

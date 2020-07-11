@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>College Registration Form</title>
+<title>Student Registration Form</title>
 <%@ include file="header.jsp" %>
 <link rel=" stylesheet" href="resources/bootstrap/css/bootstrap.min.css"/>
 <link rel=" stylesheet" href="resources/bootstrap/style.css"/>
@@ -19,56 +19,56 @@
 				<div class="row">
 					<div class="col-md-2"></div>
 							<div class="col-md-8 jumbotron">
-								<form action ="save_college" method="post" class="form-horizontal"  enctype="multipart/form-data">
+								<form action ="save_student" method="post" class="form-horizontal"  enctype="multipart/form-data">
 									<fieldset>
-									<legend> College Registration Form</legend>
+									<legend> Student Registration Form</legend>
 									 
 									
 									<div class="form-group">
-									<label class="g" >College Name</label>
-									<input type="text" name="collegeName" class="form-control">
+									<label class="g" >Student Name</label>
+									<input type="text" name="studentName" class="form-control">
+									</div>
+									
+									
+									<div class="form-group">
+									<label>Student Email</label>
+									<input type="email" name="studentEmail" class="form-control">
 									</div>
 									
 									<div class="form-group">
-									<label class="g">Password</label>
-									<input type="password" name="passWord" class="form-control">
-									</div>
-									
-									<div class="form-group">
-									<label>College Email</label>
-									<input type="email" name="collegeEmail" class="form-control">
-									</div>
-									
-									<div class="form-group">
-									<label>College Phone Number</label>
-									<input type="number" name="collegePhoneno" class="form-control">
+									<label>Student Phone Number</label>
+									<input type="number" name="studentPhoneno" class="form-control">
 									</div>
 				
 									<div class="form-group">
-									<label>Date of Establishment</label>
-									<input type="date" name="dateofEstablishment" class="form-control">
+									<label>Date of Birth</label>
+									<input type="date" name="dateofBirth" class="form-control">
 									</div>
 				
 									
 									<div class="form-group">
-									<label>College Address</label>
-									<input type="text" name="collegeAddress" class="form-control">
+									<label>Student Address</label>
+									<input type="text" name="studentAddress" class="form-control">
+									</div>
+									
+									<div class="form-group">
+									<label> Student Documents</label>
+									<input type="checkbox" name="studentDocuments" value="Passport" class="form-check">Passport
+									<input type="checkbox" name="studentDocuments" value="Bank_Statement" class="form-check">Bank Statement
+									<input type="checkbox" name="studentDocuments" value="Property_Statement" class="form-check">Property Statement
 									</div>
 									
 									
 									<div class="form-group">
-									<label>Upload Photo</label>
-									<input type="file" name="file" class="form-control">
-									</div>
-									
-									<div class="form-group">
-									<label> College Courses</label>
-									<select name ="collegeCourses" class="form-control">
-									<option value="Computer_Science">Computer Science</option>
-									<option value="Accounting">Accounting</option>
-									<option value="Finance">Finance</option>
+									<label> Student Process Status</label>
+									<select name ="studentProcessStatus" class="form-control">
+									<option value="Processing">Processing</option>
+									<option value="ProcessCompleted">ProcessCompleted</option>
 									</select>
 									</div>
+									
+									
+									
 				
 									<div class="form-group">
 									<input type="submit" value="submit" class="btn btn-primary">

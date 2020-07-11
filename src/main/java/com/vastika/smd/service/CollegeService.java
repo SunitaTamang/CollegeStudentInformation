@@ -16,6 +16,7 @@ public interface CollegeService {
 	
 	void updateCollegeInfo(College college);
 
+	College getCollegeByCollegeNameAndPassword(String collegeName, String passWord);
 
 	
 }

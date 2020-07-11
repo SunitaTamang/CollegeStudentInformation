@@ -53,7 +53,20 @@
 											<label>College Address</label>
 											<input type="text" name="collegeAddress" value="${college.collegeAddress }" class="form-control">
 											</div>
-										
+											
+									<!--  	<div class="form-group">
+										<label>Upload Photo</label>
+										<input type="file" name="file" value="${college.getImageUrl()}"  class="form-control">
+										</div> -->
+											
+											<div class="form-group">
+											<label>College Course</label>
+											<select name ="collegeCourses" class="form-control">
+												<option value="Computer_Science"${user.verificationType=='Computer_Science'?'checked':''}>Computer Science</option>
+												<option value="Accounting"${user.verificationType=='Accounting'?'checked':''}>Accounting</option>
+												<option value="Finance"${user.verificationType=='Finance'?'checked':''}>Finance</option>
+											</select>
+										</div>
 				
 										<div class="form-group">
 											<input type="submit" value="submit" class="btn btn-primary">

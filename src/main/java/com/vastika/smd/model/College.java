@@ -23,6 +23,7 @@ public class College {
 	private int collegeId;
 	@Column(name="College_name")
 	private String collegeName;
+	private String passWord;
 	@Column(name="College_Email")
 	private String collegeEmail;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -32,8 +33,8 @@ public class College {
 	private String collegePhoneno;
 	@Column(name="College_address")
 	private String collegeAddress;
-	
 	private String ImageUrl;
+	private String collegeCourses;
 
 	public int getCollegeId() {
 		return collegeId;
@@ -49,6 +50,15 @@ public class College {
 
 	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
+	}
+
+	
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
 	}
 
 	public String getCollegeEmail() {
@@ -89,6 +99,14 @@ public class College {
 
 	public void setImageUrl(String imageUrl) {
 		ImageUrl = imageUrl;
+	}
+
+	public String getCollegeCourses() {
+		return collegeCourses;
+	}
+
+	public void setCollegeCourses(String collegeCourses) {
+		this.collegeCourses = collegeCourses;
 	}
 	
 	

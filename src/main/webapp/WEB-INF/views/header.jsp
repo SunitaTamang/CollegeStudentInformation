@@ -5,22 +5,23 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
-  <a class="navbar-brand"  href="collegePage">CollegeInfoSystem</a>
+  <a style="color:Yellow" class="navbar-brand"  href="collegePage">College-Student Information System</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="list_college"> College <span class="sr-only">(current)</span></a>
+        <a style="color:Yellow" class="nav-link" href="list_college"> Colleges Info <span class="sr-only">(current)</span></a>
       </li>
       
+       <li class="nav-item active">
+        <a style="color:Yellow" class="nav-link" href="list_student"> Student Info<span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="list_college" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        MoreAboutCollege </a>
+        <a style="color:Yellow" class="nav-link dropdown-toggle" href="list_college" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        User Management </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="list_college">College Info</a>
-          <a class="dropdown-item" href="reset">Reset Password</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout">Logout</a>
+        <a style="color:Darkgreen" class="dropdown-item" href="reset_password">Reset Password</a>
+          <a style="color:Darkgreen" class="dropdown-item" href="logout">Logout</a>
         </div>
       </li>
     </ul>

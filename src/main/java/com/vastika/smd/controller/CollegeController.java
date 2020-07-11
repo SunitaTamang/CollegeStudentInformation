@@ -18,7 +18,7 @@ public class CollegeController {
 	@Autowired
 	private CollegeService collegeService;
 	
-	@RequestMapping(value= "/collegePage")
+	@RequestMapping(value="/collegePage")
 	public String getHomePage() {
 		return "collegePage";
 		}
@@ -38,8 +38,8 @@ public class CollegeController {
 		
 	}
 	@RequestMapping(value= "/update_college", method =RequestMethod.POST)
-	public String updateCollegeInfo(@ModelAttribute College user) {
-		collegeService.updateCollegeInfo(user);
+	public String updateCollegeInfo(@ModelAttribute College college) {
+		collegeService.updateCollegeInfo(college);
 		return "redirect:/list_college";
 	}
 	

@@ -12,13 +12,13 @@
         <div class="card card-container">
      
             <img id="profile-img" class="profile-img-card" 
-            	src="image_display?id=${id}" />
+            	src="/Downloads/college.jpg" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" action="user-login" method="post">
+            <form class="form-signin" action="college-login" method="post">
             
             <span style="color:red;">${msg}</span>
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="userName"  value="${uname}"required autofocus>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Collegename" name="collegeName"  value="${cname}"required autofocus>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="passWord" value="${pass}" required>
                 <div id="remember" class="checkbox">
                     <label>

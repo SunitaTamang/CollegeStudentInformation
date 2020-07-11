@@ -47,5 +47,11 @@ public class CollegeServiceImp implements CollegeService {
 		collegeRepository.updateCollegeInfo(college);
 	}
 
+	@Override
+	public College getCollegeByCollegeNameAndPassword(String collegeName, String passWord) {
+		
+		return collegeRepository.getCollegeByCollegeNameAndPassword(collegeName, passWord);
+	}
+
 
 }

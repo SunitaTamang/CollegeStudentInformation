@@ -54,6 +54,15 @@ public  class CollegeRepositoryImp implements CollegeRepository {
 		
 	}
 
+	@Override
+	public College getCollegeByCollegeNameAndPassword(String collegeName, String passWord) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(College.class);
+		criteria.add(Restrictions.eq("collegeName", collegeName)).add(Restrictions.eq("passWord", passWord));
+		return (College) criteria.uniqueResult();
+	}
+
+	
 
 
 
