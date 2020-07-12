@@ -6,8 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vastika.smd.model.College;
@@ -22,7 +20,7 @@ public class ResetController {
 		this.collegeService=collegeService;
 	}
 	
-	@RequestMapping(value = "/reset", method = RequestMethod.GET)
+	@GetMapping( "/reset" )
 	public String getResetForm() {
 		return "reset";
 		

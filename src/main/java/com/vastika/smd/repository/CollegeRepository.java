@@ -5,6 +5,7 @@ import java.util.List;
 import com.vastika.smd.model.College;
 
 
+
 public interface CollegeRepository {
 	
 	void saveCollegeInfo(College college);
@@ -18,4 +19,9 @@ public interface CollegeRepository {
 	void updateCollegeInfo(College college);
 
 	College getCollegeByCollegeNameAndPassword(String collegeName, String passWord);
+	
+	void resetCollegePassword(College college);
+	
+	College getCollegeByEmail (String email);
+	
 	}

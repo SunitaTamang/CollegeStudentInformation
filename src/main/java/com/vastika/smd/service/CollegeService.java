@@ -18,5 +18,8 @@ public interface CollegeService {
 
 	College getCollegeByCollegeNameAndPassword(String collegeName, String passWord);
 
+	void resetCollegePassword(College college);
+	
+	College getCollegeByEmail (String email);
 	
 }

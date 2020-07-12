@@ -20,8 +20,8 @@
         <a style="color:Yellow" class="nav-link dropdown-toggle" href="list_college" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         User Management </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a style="color:Darkgreen" class="dropdown-item" href="reset_password">Reset Password</a>
-          <a style="color:Darkgreen" class="dropdown-item" href="logout">Logout</a>
+        <a style="color:Darkgreen"   class="dropdown-item" href="reset"><b>Reset Password</b></a>
+          <a style="color:Darkgreen"  class="dropdown-item" href="logout"><b>Logout</b></a>
         </div>
       </li>
     </ul>

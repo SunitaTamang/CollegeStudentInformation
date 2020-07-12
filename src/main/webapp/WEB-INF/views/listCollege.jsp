@@ -9,7 +9,7 @@
 <%@ include file="header.jsp" %>
 </head>
 <body>
-<div>
+<div >
 <a href="add_college">Add College</a>
 </div>
 

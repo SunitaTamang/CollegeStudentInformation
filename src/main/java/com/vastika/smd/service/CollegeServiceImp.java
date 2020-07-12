@@ -53,5 +53,15 @@ public class CollegeServiceImp implements CollegeService {
 		return collegeRepository.getCollegeByCollegeNameAndPassword(collegeName, passWord);
 	}
 
+	@Override
+	public void resetCollegePassword(College college) {
+		collegeRepository.updateCollegeInfo(college);
+		
+	}
+
+	@Override
+	public College getCollegeByEmail(String email) {
+		return collegeRepository.getCollegeByEmail(email);
+	}
 
 }
