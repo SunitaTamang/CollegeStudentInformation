@@ -22,8 +22,6 @@
 								<form action ="save_college" method="post" class="form-horizontal"  enctype="multipart/form-data">
 									<fieldset>
 									<legend> College Registration Form</legend>
-									 
-									
 									<div class="form-group">
 									<label class="g" >College Name</label>
 									<input type="text" name="collegeName" class="form-control">
