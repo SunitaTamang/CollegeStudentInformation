@@ -13,6 +13,7 @@ h1 {text-align: center;}
 <body>
 <header>
 <h1>Welcome to The College-Student Information Page!!!</h1>
+<img src="file:///C:/Users/Sunita%20Tamang/Downloads/cns.jpg" alt ="college" />
 
 </header>
 

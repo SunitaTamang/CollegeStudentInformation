@@ -46,6 +46,21 @@ public class StudentServiceImp implements StudentService {
 		studentRepository.updateStudentInfo(student);
 	}
 
+	@Override
+	public List<Student> getAllStudentName() {
+		return studentRepository.getAllStudentName();
+	}
+
+	@Override
+	public List<Student> getAllStudentPersonalInfo() {
+		return studentRepository.getAllStudentPersonalInfo();
+		}
+
+	@Override
+	public List<Student> getAllStudentContactInfo() {
+		return studentRepository.getAllStudentContactInfo();
+	}
+
 	
 	
 

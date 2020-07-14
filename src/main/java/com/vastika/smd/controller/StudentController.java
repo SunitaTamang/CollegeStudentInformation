@@ -54,5 +54,24 @@ public class StudentController {
 		model.addAttribute("student", studentService.getStudentInfoById(id));
 		return "editStudent";
 	}
-
+	
+	@RequestMapping(value= "/list_student_names")
+	public String getAllStudentName(Model model) {
+		model.addAttribute("students",studentService.getAllStudentName());
+		return "listStudentName";
+	}
+	
+	@RequestMapping(value= "/list_student_personalInfo")
+	public String getAllStudentPersonalInfo(Model model) {
+		model.addAttribute("students",studentService.getAllStudentPersonalInfo());
+		return "studentPersonalInfo";
+	}
+	
+	@RequestMapping(value= "/list_student_contactInfo")
+	public String getAllStudentContactInfo(Model model) {
+		model.addAttribute("students",studentService.getAllStudentContactInfo());
+		return "studentContactInfo";
+	}
+	
+	
 }

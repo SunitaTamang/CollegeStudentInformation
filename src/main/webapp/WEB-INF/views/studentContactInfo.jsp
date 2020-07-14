@@ -5,14 +5,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Student List</title>
+<title>Student Personal Info </title>
 <%@ include file="header.jsp" %>
 </head>
 <body>
-<div>
-<a href="add_student">Add Student</a>
-</div>
-
 
 <c:if test="${!empty students }">
 <table class="table table-striped">
@@ -22,13 +18,8 @@
 	   <th>Student Id</th>
 	   <th>Student Name </th>
 	   <th>Student Email </th>
-	   <th>Date of Birth</th>
 	   <th>Student Phone Number</th>
 	   <th>Student Address</th>
-	   <th>Student Documents</th>
-	   <th>Student Process Status</th>
-	   <th>Actions</th>
-	   
 	</tr>
 	</thead>
 	<tbody>
@@ -38,12 +29,9 @@
 	<td>${student.studentId }</td>
 	 <td>${student.studentName }</td>
 	 <td>${student.studentEmail }</td>
-	<td>${student.dateofBirth }</td>
 	<td>${student.studentPhoneno }</td>
 	<td>${student.studentAddress} </td>
-	<td>${student.studentDocuments} </td>
-	<td>${student.studentProcessStatus} </td>
-	<td><a href="edit_student?id=${student.studentId}">Edit</a>|<a href="delete_student?id=${student.studentId }">Delete</a></td>
+	
 	
 	</tr>
 	</c:forEach>

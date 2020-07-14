@@ -55,5 +55,27 @@ public class StudentRepositoryImpl implements StudentRepository {
 		session.update(student);
 		
 	}
+	
+	@Override
+	public List<Student> getAllStudentName() {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(Student.class);
+		return criteria.list();
+	}
+
+	@Override
+	public List<Student> getAllStudentPersonalInfo() {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(Student.class);
+		return criteria.list();
+	}
+
+	@Override
+	public List<Student> getAllStudentContactInfo() {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(Student.class);
+		return criteria.list();
+	}
+	
 
 }

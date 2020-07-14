@@ -15,5 +15,11 @@ public interface StudentService {
 	Student getStudentInfoById (int id);
 	
 	void updateStudentInfo(Student student);
+	
+	List<Student> getAllStudentName();
+
+	List<Student> getAllStudentPersonalInfo();
+
+	List<Student> getAllStudentContactInfo();
 
 }

@@ -13,9 +13,17 @@
         <a style="color:Yellow" class="nav-link" href="list_college"> Colleges Info <span class="sr-only">(current)</span></a>
       </li>
       
-       <li class="nav-item active">
-        <a style="color:Yellow" class="nav-link" href="list_student"> Student Info<span class="sr-only">(current)</span></a>
-      </li>
+	<li class="nav-item dropdown">
+        <a style="color:Yellow" class="nav-link dropdown-toggle" href="list_student_names" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Student Info </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a style="color:Darkgreen"   class="dropdown-item" href="list_student_names"><b>Student Names</b></a>
+        <a style="color:Darkgreen"   class="dropdown-item" href="list_student_personalInfo"><b>Student Personal Information</b></a>
+          <a style="color:Darkgreen"  class="dropdown-item" href="list_student_contactInfo"><b>Student Contact Information</b></a>
+           <a style="color:Darkgreen"  class="dropdown-item" href="list_student"><b>Student All Information</b></a>
+        </div>
+   	  </li>
+   	   
       <li class="nav-item dropdown">
         <a style="color:Yellow" class="nav-link dropdown-toggle" href="list_college" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         User Management </a>

@@ -16,6 +16,14 @@ public interface StudentRepository {
 	
 	void updateStudentInfo(Student student);
 
+	List<Student> getAllStudentName();
+
+
+	List<Student> getAllStudentPersonalInfo();
+
+
+	List<Student> getAllStudentContactInfo();
+
 
 
 }
