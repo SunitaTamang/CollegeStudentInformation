@@ -21,5 +21,11 @@ public interface StudentService {
 	List<Student> getAllStudentPersonalInfo();
 
 	List<Student> getAllStudentContactInfo();
+	
+	Student getStudentByStudentNameAndPassword(String studentName, String spassWord);
+	
+	void resetStudentPassword(Student student);
+	
+	Student getStudentByEmail (String email);
 
 }

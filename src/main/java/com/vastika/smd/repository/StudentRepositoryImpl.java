@@ -5,9 +5,11 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.vastika.smd.model.Student;
 import com.vastika.smd.model.Student;
 import com.vastika.smd.util.HibernateUtil;
 
@@ -75,6 +77,29 @@ public class StudentRepositoryImpl implements StudentRepository {
 		Session session = HibernateUtil.getSession(sessionFactory);
 		Criteria criteria = session.createCriteria(Student.class);
 		return criteria.list();
+	}
+
+	@Override
+	public Student getStudentByStudentNameAndPassword(String studentName, String spassWord) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(Student.class);
+		criteria.add(Restrictions.eq("studentName", studentName)).add(Restrictions.eq("spassWord", spassWord));
+		return (Student) criteria.uniqueResult();
+	}
+
+	@Override
+	public void resetStudentPassword(Student student) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		session.update(student);
+		
+	}
+
+	@Override
+	public Student getStudentByEmail(String email) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(Student.class);
+		criteria.add(Restrictions.eq("email", email));
+		return (Student) criteria.uniqueResult();
 	}
 	
 

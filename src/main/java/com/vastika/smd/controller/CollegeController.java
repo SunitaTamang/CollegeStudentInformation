@@ -19,7 +19,7 @@ public class CollegeController {
 	private CollegeService collegeService;
 	
 	@RequestMapping(value="/collegePage")
-	public String getHomePage() {
+	public String getCollegeHomePage() {
 		return "collegePage";
 		}
 

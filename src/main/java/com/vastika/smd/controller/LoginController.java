@@ -20,40 +20,53 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.vastika.smd.dto.EmailDto;
 import com.vastika.smd.dto.Login;
 import com.vastika.smd.model.College;
+import com.vastika.smd.model.Student;
 import com.vastika.smd.service.CollegeService;
+import com.vastika.smd.service.StudentService;
 import com.vastika.smd.util.EmailUtil;
+
+
 
 @Controller
 public class LoginController {
 
-	private final CollegeService collegeService;
+	private final CollegeService collegeService ;
+	
+	private final StudentService studentService;
 	
 	private final MailSender mailSender;
 
 	@Autowired
-	public LoginController(CollegeService collegeService,MailSender mailSender) {
+	public LoginController(CollegeService collegeService,StudentService studentService,MailSender mailSender) {
 		this.mailSender = mailSender;
 		this.collegeService = collegeService;
+		this.studentService= studentService;
 	}
 
-	@GetMapping({ "/", "/login" })
-	public String getLoginForm() {
-		return "login";
+	@GetMapping( "/collegeLogin" )
+	public String getCollegeLoginForm() {
+		return "collegeLogin";
+
+	}
+	
+	@GetMapping( "/studentLogin" )
+	public String geStudentLoginForm() {
+		return "studentLogin";
 
 	}
 
 	@PostMapping("/college-login")
-	public String login(@ModelAttribute Login login, HttpServletRequest request, HttpServletResponse  response, HttpSession session,
+	public String collegeLogin(@ModelAttribute Login collegeLogin, HttpServletRequest request, HttpServletResponse  response, HttpSession session,
 			Model model) {
-		College college = collegeService.getCollegeByCollegeNameAndPassword(login.getCollegeName(), login.getPassWord());
+		College college = collegeService.getCollegeByCollegeNameAndPassword(collegeLogin.getCollegeName(), collegeLogin.getCpassWord());
 
 		if (college != null) {
-			session.setAttribute("cname", login.getCollegeName());
+			session.setAttribute("cname", collegeLogin.getCollegeName());
 			session.setAttribute("id", college.getCollegeId());
 			
-			if(login.getRememberMe()!= null) {
-				Cookie cookie1= new Cookie("collegename",login.getCollegeName());
-				Cookie cookie2= new Cookie("password", login.getPassWord());
+			if(collegeLogin.getRememberMe()!= null) {
+				Cookie cookie1= new Cookie("collegename",collegeLogin.getCollegeName());
+				Cookie cookie2= new Cookie("password", collegeLogin.getCpassWord());
 				Cookie cookie3= new Cookie("id", String.valueOf(college.getCollegeId()));
 				
 				cookie1.setMaxAge(100);
@@ -68,11 +81,40 @@ public class LoginController {
 
 		}
 		model.addAttribute("msg", "Wrong collegename or password!!!");
-		return "login";
+		return "collegeLogin";
 	}
 	
-	@GetMapping("/logout")
-	public String getLoginForm(Model model, HttpSession session, HttpServletResponse response,HttpServletRequest request) {
+	@PostMapping("/student-login")
+	public String studentLogin(@ModelAttribute Login studentLogin, HttpServletRequest request, HttpServletResponse  response, HttpSession session,
+			Model model) {
+		Student student = studentService.getStudentByStudentNameAndPassword(studentLogin.getStudentName(), studentLogin.getSpassWord());
+
+		if (student != null) {
+			session.setAttribute("sname", studentLogin.getStudentName());
+			session.setAttribute("id", student.getStudentId());
+			
+			if(studentLogin.getRememberMe()!= null) {
+				Cookie cookie1= new Cookie("studentname",studentLogin.getStudentName());
+				Cookie cookie2= new Cookie("password", studentLogin.getSpassWord());
+				Cookie cookie3= new Cookie("id", String.valueOf(student.getStudentId()));
+				
+				cookie1.setMaxAge(100);
+				cookie2.setMaxAge(100);
+				cookie3.setMaxAge(100);
+				
+				 response.addCookie(cookie1);
+				 response.addCookie(cookie2);
+				 response.addCookie(cookie3);
+			}
+			return "redirect:/studentPage";
+
+		}
+		model.addAttribute("msg", "Wrong Student Name or password!!!");
+		return "studentLogin";
+	}
+	
+	@GetMapping("/collegelogout")
+	public String getCollegeLoginForm(Model model, HttpSession session, HttpServletResponse response,HttpServletRequest request) {
 		session.invalidate();
 		
 		Cookie [] cookies = request.getCookies();
@@ -80,10 +122,10 @@ public class LoginController {
 		if (cookies!=null){
 			for (int i =0; i<cookies.length;i++){
 				if(cookies[i].getName().equals("collegename")){
-					model.addAttribute("uname", cookies[i].getValue());
+					model.addAttribute("cname", cookies[i].getValue());
 				}
 				else if(cookies[i].getName().equals("password")){
-					model.addAttribute("pass", cookies[i].getValue());
+					model.addAttribute("cpass", cookies[i].getValue());
 				}
 				else if(cookies[i].getName().equals("id")){
 					model.addAttribute("id", Integer.parseInt(cookies[i].getValue()));
@@ -92,13 +134,39 @@ public class LoginController {
 		}
 		
 		model.addAttribute("msg", "You are successful logged out!!!");
-		return "login";
+		return "collegeLogin";
 
 	}
 	
-	@PostMapping("/forgot-password")
-	public String forgotPassword(@RequestParam String email, Model model) {
-		College college = collegeService.getCollegeByEmail(email);
+	@GetMapping("/studentlogout")
+	public String getStudentLoginForm(Model model, HttpSession session, HttpServletResponse response,HttpServletRequest request) {
+		session.invalidate();
+		
+		Cookie [] cookies = request.getCookies();
+		
+		if (cookies!=null){
+			for (int i =0; i<cookies.length;i++){
+				if(cookies[i].getName().equals("studentname")){
+					model.addAttribute("sname", cookies[i].getValue());
+				}
+				else if(cookies[i].getName().equals("password")){
+					model.addAttribute("spass", cookies[i].getValue());
+				}
+				else if(cookies[i].getName().equals("id")){
+					model.addAttribute("id", Integer.parseInt(cookies[i].getValue()));
+				}
+			}
+		}
+		
+		model.addAttribute("msg", "You are successful logged out!!!");
+		return "studentLogin";
+
+	}
+	
+	
+	@PostMapping("/forgot-college-password")
+	public String forgotCollegePassword(@RequestParam String cemail, Model model) {
+		College college = collegeService.getCollegeByEmail(cemail);
 		if (college !=null) {
 			String newPassword = getRandomPassword();
 			college.setPassWord(newPassword);
@@ -114,9 +182,29 @@ public class LoginController {
 			model.addAttribute("forgotPassMsg","Your password has been reset successfully!!!" );
 		}
 		model.addAttribute("forgotPassMsg","Your email is invalid!!!" );
-		return "login";
+		return "collegeLogin";
 	}
 	
+	@PostMapping("/forgot-student-password")
+	public String forgotStudentPassword(@RequestParam String semail, Model model) {
+		Student student = studentService.getStudentByEmail(semail);
+		if (student !=null) {
+			String newPassword = getRandomPassword();
+			student.setSpassWord(newPassword);
+			studentService.updateStudentInfo(student);
+			
+			EmailDto emailDto = new EmailDto();
+			emailDto.setFromAddress("");
+			emailDto.setToAddress(student.getStudentEmail());
+			emailDto.setSubject("password reset");
+			String msgBody="your new password is :"+ newPassword;
+			emailDto.setMsgBody(msgBody);
+			EmailUtil.sendEmail(mailSender, emailDto);
+			model.addAttribute("forgotPassMsg","Your password has been reset successfully!!!" );
+		}
+		model.addAttribute("forgotPassMsg","Your email is invalid!!!" );
+		return "studentLogin";
+	}
 	private String getRandomPassword() {
 		SecureRandom random = new SecureRandom();
 		String password= new BigInteger(50, random).toString(30);

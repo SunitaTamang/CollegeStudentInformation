@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Student List</title>
-<%@ include file="header.jsp" %>
+<%@ include file="studentHeader.jsp" %>
 </head>
 <body>
 <div>
@@ -21,6 +21,7 @@
 		<th>SN</th>
 	   <th>Student Id</th>
 	   <th>Student Name </th>
+	   <th>Password </th>
 	   <th>Student Email </th>
 	   <th>Date of Birth</th>
 	   <th>Student Phone Number</th>
@@ -37,6 +38,7 @@
 	<td>${i.count}</td>
 	<td>${student.studentId }</td>
 	 <td>${student.studentName }</td>
+	 <td>${student.spassWord }</td>
 	 <td>${student.studentEmail }</td>
 	<td>${student.dateofBirth }</td>
 	<td>${student.studentPhoneno }</td>

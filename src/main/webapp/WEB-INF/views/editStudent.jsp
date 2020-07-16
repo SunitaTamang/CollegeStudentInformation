@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Student Edit Form</title>
-<%@ include file="header.jsp" %>
+<%@ include file="studentHeader.jsp" %>
 <link rel=" stylesheet" href="resources/bootstrap/css/bootstrap.min.css"/>
 <link rel=" stylesheet" href="resources/bootstrap/style.css"/>
 <script type="text/javascript" src="resources/jquery.js"></script>

@@ -61,6 +61,22 @@ public class StudentServiceImp implements StudentService {
 		return studentRepository.getAllStudentContactInfo();
 	}
 
+	@Override
+	public Student getStudentByStudentNameAndPassword(String studentName, String spassWord) {
+		return studentRepository.getStudentByStudentNameAndPassword(studentName, spassWord);
+	}
+
+	@Override
+	public void resetStudentPassword(Student student) {
+		studentRepository.updateStudentInfo(student);
+		
+	}
+
+	@Override
+	public Student getStudentByEmail(String email) {
+		return studentRepository.getStudentByEmail(email);
+	}
+
 	
 	
 

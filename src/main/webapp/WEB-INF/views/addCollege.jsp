@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>College Registration Form</title>
-<%@ include file="header.jsp" %>
+<%@ include file="cHeader.jsp" %>
 <link rel=" stylesheet" href="resources/bootstrap/css/bootstrap.min.css"/>
 <link rel=" stylesheet" href="resources/bootstrap/style.css"/>
 <script type="text/javascript" src="resources/jquery.js"></script>
@@ -29,7 +29,7 @@
 									
 									<div class="form-group">
 									<label class="g">Password</label>
-									<input type="password" name="passWord" class="form-control">
+									<input type="password" name="cpassWord" class="form-control">
 									</div>
 									
 									<div class="form-group">

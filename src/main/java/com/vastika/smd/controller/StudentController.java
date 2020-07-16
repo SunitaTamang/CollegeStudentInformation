@@ -18,7 +18,11 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
-	
+	@RequestMapping(value="/studentPage")
+	public String getStudentHomePage() {
+		return "studentPage";
+		}
+
 	@RequestMapping(value="/add_student")
 	public String getAddStudentForm() {
 		return "addStudent";

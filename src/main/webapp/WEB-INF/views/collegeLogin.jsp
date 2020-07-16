@@ -19,7 +19,7 @@
             <span style="color:red;">${msg}</span>
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="text" id="inputEmail" class="form-control" placeholder="College Name" name="collegeName"  value="${cname}"required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="passWord" value="${pass}" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="cpassWord" value="${cpass}" required>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me" name="rememberMe"> Remember me
@@ -47,7 +47,7 @@
                     
                   </div>
                   <div class = "modal-body">
-                     <form action="forgot-password" method="post">
+                     <form action="forgot-college-password" method="post">
                      
                      <div class="form-group">
                      <label>Email</label>

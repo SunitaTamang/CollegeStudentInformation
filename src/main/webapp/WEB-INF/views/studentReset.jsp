@@ -5,21 +5,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Reset Password</title>
-<%@ include file="header.jsp" %>
 <link rel=" stylesheet" href="resources/bootstrap/css/bootstrap.min.css"/>
 <script type="text/javascript" src="resources/jquery.js"></script>
 <script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<form action ="reset_password" method="post" class="form-horizontal">
+<form action ="reset_student_password" method="post" class="form-horizontal">
 	<fieldset>
-		<legend> Reset Password</legend>
+		<legend> Reset Student Password</legend>
 		<span style="color:red">${message}</span>
  			<div class="container">
 				<div class="form-group">
 					<label class="g">OldPassword</label>
-					<input type="password" name="passWord" class="form-control">
+					<input type="password" name="spassWord" class="form-control">
 				</div>
 			
 				<div class="form-group">

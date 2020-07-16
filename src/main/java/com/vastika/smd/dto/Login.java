@@ -3,7 +3,9 @@ package com.vastika.smd.dto;
 public class Login {
 
 	private String collegeName;
-	private String passWord;
+	private String studentName;
+	private String cpassWord;
+	private String spassWord;
 	private String rememberMe;
 	
 	public String getCollegeName() {
@@ -12,18 +14,33 @@ public class Login {
 	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
 	}
-	public String getPassWord() {
-		return passWord;
+	
+	public String getStudentName() {
+		return studentName;
 	}
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
+	public String getCpassWord() {
+		return cpassWord;
+	}
+	public void setCpassWord(String cpassWord) {
+		this.cpassWord = cpassWord;
+	}
+	public String getSpassWord() {
+		return spassWord;
+	}
+	public void setSpassWord(String spassWord) {
+		this.spassWord = spassWord;
+	}
+	
 	public String getRememberMe() {
 		return rememberMe;
 	}
 	public void setRememberMe(String rememberMe) {
 		this.rememberMe = rememberMe;
 	}
+	
 	
 	
 }

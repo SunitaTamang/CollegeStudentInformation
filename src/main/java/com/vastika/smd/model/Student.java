@@ -24,6 +24,8 @@ package com.vastika.smd.model;
 		private int studentId;
 		@Column(name="Student_name")
 		private String studentName;
+		
+		private String spassWord;
 		@Column(name="Student_Email")
 		private String studentEmail;
 		@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -47,6 +49,13 @@ package com.vastika.smd.model;
 		}
 		public void setStudentName(String studentName) {
 			this.studentName = studentName;
+		}
+		
+		public String getSpassWord() {
+			return spassWord;
+		}
+		public void setSpassWord(String spassWord) {
+			this.spassWord = spassWord;
 		}
 		public String getStudentEmail() {
 			return studentEmail;

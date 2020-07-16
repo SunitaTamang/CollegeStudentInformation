@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Student Personal Info</title>
-<%@ include file="header.jsp" %>
+<%@ include file="studentHeader.jsp" %>
 </head>
 <body>
 

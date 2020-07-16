@@ -4,16 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>College Page</title>
-<%@ include file="cHeader.jsp" %>
+<title>Student Page</title>
+<%@ include file="studentHeader.jsp" %>
 <style>
 h1 {text-align: center;}
 </style>
 </head>
 <body>
 <header>
-<h1>Welcome to The College-Student Information Page!!!</h1>
-<!--  <img src="file:///C:/Users/Sunita%20Tamang/Downloads/cns.jpg" alt ="college" />-->
+<h1>Welcome to The Student Information Page!!!</h1>
 
 </header>
 
